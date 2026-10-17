@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+class shape
+{
+    public:
+    virtual void area()=0;
+    
+};
+    class rectangle : public shape
+    {
+    private:
+    float length, width;
+    public:
+    rectangle(float l, float w)
+    {
+        length = l;
+        width = w;
+    }
+    void area()
+    {
+        cout<<"area of rectangle: "<< length * width <<endl;
+    }
+    };
+    class circle : public shape
+    {private:
+    float radius;
+    public:
+    circle(float r)
+    {
+        radius=r;
+    }
+    void area()
+    {
+        cout<<"area of circle: " << 3.14159 * radius * radius <<endl;
+    }
+    };
+    int main()
+    {
+        rectangle r(6, 5);
+        circle c(4);
+        r.area();
+        c.area();
+        return 0;
+}
